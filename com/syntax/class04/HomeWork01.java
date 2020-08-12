@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class HomeWork01 {
 	public static String url = "http://166.62.36.207/syntaxpractice/basic-radiobutton-demo.html";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 
@@ -19,18 +19,21 @@ public class HomeWork01 {
 
 		driver.get(url);
 
-		List<WebElement> genderBox = driver.findElements(By.xpath("//input[@name= 'gender']"));
+		List<WebElement> genderBoxes = driver.findElements(By.xpath("//input[@name= 'gender']"));
 		
-		String genderBoxess = null;	
 		
-		for (WebElement gender : genderBox) {
+		
+		String SelectedGenderBox = null;	
+		
+		for (WebElement gender : genderBoxes) {
 
+		
 			if (gender.isEnabled()) {
 				String genderCheckBox = gender.getAttribute("value");
 
 				if (genderCheckBox.contentEquals("Male")) {
 					gender.click();
-					genderBoxess=genderCheckBox;
+					SelectedGenderBox=genderCheckBox;
 				}
 			}
 
@@ -38,13 +41,13 @@ public class HomeWork01 {
 
 		List<WebElement> ageBoxes = driver.findElements(By.xpath("//input[@name= 'ageGroup']"));
 		
-		String ageBoxess = null;
+		String SelectedAgeBox = null;
 		for (WebElement ageOption : ageBoxes) {
 			if (ageOption.isEnabled()) {
-				String ageBox = ageOption.getAttribute("value");
-				if (ageBox.contentEquals("15 - 50")) {
+				String ageCheckBox = ageOption.getAttribute("value");
+				if (ageCheckBox.contentEquals("15 - 50")) {
 					ageOption.click();
-					ageBoxess=ageBox;
+					SelectedAgeBox=ageCheckBox;
 				}
 
 			}
@@ -61,13 +64,16 @@ public class HomeWork01 {
 			
 			System.out.println(outputOfGetValues);
 			
-			if (outputOfGetValues.contains(ageBoxess) && outputOfGetValues.contains(genderBoxess)) {
+			if (outputOfGetValues.contains(SelectedAgeBox) && outputOfGetValues.contains(SelectedGenderBox)) {
 				System.out.println("output verified");
 			} else {
 				System.out.println("somethong wrong with output");
 			}
 			
 		}
+		
+		
+	
 		
 	}
 }

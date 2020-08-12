@@ -38,7 +38,7 @@ public class HomeWork02 {
 		
 		System.out.println(errorMessage.isEnabled());
 		System.out.println(errorMessage.isSelected());
-		driver.quit();
+//		driver.quit();
 
 	}
 
