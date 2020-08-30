@@ -20,6 +20,24 @@ public class FacebookDDExample {
 		WebDriver driver = new ChromeDriver();
 		driver.get(url);
 		
+		driver.findElement(By.xpath("//input[@name ='firstname']")).sendKeys("Mick");
+		driver.findElement(By.xpath("//input[@name ='lastname']")).sendKeys("John");
+		driver.findElement(By.xpath("//input[@name ='reg_email__']")).sendKeys("12345678");
+		driver.findElement(By.xpath("//input[@id ='password_step_input']")).sendKeys("abcd1234");
+		
+		
+		List<WebElement> genderBox = driver.findElements(By.xpath("//input[@name ='sex']"));
+		
+		for(WebElement gender:genderBox) {
+			String genderCheckBox = gender.getAttribute("Value");
+			if(genderCheckBox.contentEquals("2")) {
+				gender.click();
+			
+		}
+		}
+		
+		
+
 		WebElement  months= driver.findElement(By.id("month"));
 		Select selectMoth =new Select(months);
 		List<WebElement> optionsMonth =selectMoth.getOptions();
@@ -51,7 +69,7 @@ public class FacebookDDExample {
 		selectYears.selectByValue("1986");
 				
 		
-		
+		driver.findElement(By.id("u_0_14")).click();
 		
 		
 		

@@ -14,6 +14,8 @@ public class XpethIntro {
 
 		WebDriver driver = new ChromeDriver();
 		
+		
+		
 		driver.get("https://slack-redir.net/link?url=http%3A%2F%2Fsecure.smartbearsoftware.com%2Fsamples%2FTestComplete11%2FWebOrders%2Fdefault.aspx\n");
 		driver.findElement(By.xpath("//input[@type ='text']")).sendKeys("Tester");
 		driver.findElement(By.xpath("//input[@id ='ctl00_MainContent_password']")).sendKeys("test");

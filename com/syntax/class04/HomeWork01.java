@@ -31,7 +31,7 @@ public class HomeWork01 {
 			if (gender.isEnabled()) {
 				String genderCheckBox = gender.getAttribute("value");
 
-				if (genderCheckBox.contentEquals("Male")) {
+				if (genderCheckBox.contentEquals("Female")) {
 					gender.click();
 					SelectedGenderBox=genderCheckBox;
 				}
