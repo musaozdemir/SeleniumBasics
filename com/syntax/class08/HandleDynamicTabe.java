@@ -32,8 +32,7 @@ public class HandleDynamicTabe {
 				System.out.println(rowText);
 
 				if (rowText.contains("Bob Feather")) {
-					driver.findElements(By.xpath("//table[@id= 'ctl00_MainContent_orderGrid']/tbody/tr/td[1]"))
-							.get(i-1).click();
+					driver.findElements(By.xpath("//table[@id= 'ctl00_MainContent_orderGrid']/tbody/tr/td[1]")).get(i-1).click();
 					break;
 
 				}

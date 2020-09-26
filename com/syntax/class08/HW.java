@@ -16,23 +16,18 @@ public class HW {
 	
 	public static String url = "https://the-internet.herokuapp.com/dynamic_controls";
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException{
 
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-
 		WebDriver driver = new ChromeDriver();
 		driver.get(url);
-	
 		WebElement checkBox = driver.findElement(By.xpath("//*[@id=\"checkbox\"]/input"));
 		checkBox.click();
-		
-		WebElement 
-		
-		
-		
+
 		Thread.sleep(5000);
 		driver.close();
-	
+
+		
 	
 	
 	}
